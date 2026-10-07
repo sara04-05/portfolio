@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Sara: full-stack developer and Electronics, Automation &amp; Robotics student at FIEK.">
 <title>Sara · Robot OS</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
 <style>
@@ -187,6 +193,8 @@ a{color:var(--mint)}
 .theme{font:20px var(--f-pixel);color:var(--amber);border:1px solid var(--line);border-radius:6px;padding:0 10px;line-height:1.4}
 .theme:hover{background:var(--tint)}
 </style>
+</head>
+<body>
 
 <div id="boot" role="dialog" aria-label="Boot screen"><div><pre id="bootText"></pre><button id="skip">Skip ▸</button></div></div>
 <div class="scan" aria-hidden="true"></div>
@@ -412,3 +420,5 @@ function cmd(c){const o=$('#out');const R={help:"commands: about, skills, projec
   o.textContent+=`> ${c}\n${R[c]||"unknown command. try 'help'"}\n`;o.parentElement.scrollTop=1e9}
 function wiggle(){$('#bolt').animate([{transform:'rotate(0)'},{transform:'rotate(-8deg)'},{transform:'rotate(8deg)'},{transform:'rotate(0)'}],{duration:500,iterations:4});say("Wheee!")}
 </script>
+</body>
+</html>
