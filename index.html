@@ -32,13 +32,24 @@
     </div>
     <div class="bot" aria-label="Bolt, the guide robot">
       <svg viewBox="0 0 120 130" id="bolt" aria-label="Bolt the robot. Click for a tip.">
+      <defs>
+        <linearGradient id="bgBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="s-hi"/><stop offset="1" class="s-lo"/></linearGradient>
+        <linearGradient id="bgShade" x1="0" y1="0" x2="0" y2="1"><stop offset=".55" stop-color="var(--bolt-shade)" stop-opacity="0"/><stop offset="1" stop-color="var(--bolt-shade)" stop-opacity=".55"/></linearGradient>
+        <linearGradient id="bgGloss" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".45"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/></linearGradient>
+        <radialGradient id="bgIris" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#fff"/><stop offset=".35" class="i-hi"/><stop offset="1" class="i-lo"/></radialGradient>
+      </defs>
       <line x1="60" y1="8" x2="60" y2="22" stroke="#ffd9a8" stroke-width="3"/><circle cx="60" cy="7" r="5" fill="#ff8a6b" id="led"/>
       <rect x="22" y="22" width="76" height="58" rx="16" fill="#3a2f4a" stroke="#ffd9a8" stroke-width="3"/>
+      <rect class="b-fx" x="22" y="22" width="76" height="58" rx="16" fill="url(#bgShade)"/>
+      <rect class="b-fx" x="25" y="25" width="70" height="52" rx="13" fill="url(#bgGloss)"/>
       <circle cx="46" cy="50" r="10" fill="#16121d"/><circle cx="74" cy="50" r="10" fill="#16121d"/>
       <circle id="eyeL" cx="46" cy="50" r="6" fill="#9ee6d0"/><circle id="eyeR" cx="74" cy="50" r="6" fill="#9ee6d0"/>
+      <circle class="b-cheek" cx="31" cy="66" r="5"/><circle class="b-cheek" cx="89" cy="66" r="5"/>
       <path d="M48 66 q12 8 24 0" stroke="#ffd9a8" stroke-width="3" fill="none" stroke-linecap="round"/>
       <rect x="38" y="84" width="44" height="30" rx="8" fill="#3a2f4a" stroke="#ffd9a8" stroke-width="3"/>
-      <circle cx="60" cy="99" r="4" fill="#ff8a6b"/>
+      <rect class="b-fx" x="38" y="84" width="44" height="30" rx="8" fill="url(#bgShade)"/>
+      <rect class="b-fx" x="41" y="87" width="38" height="24" rx="6" fill="url(#bgGloss)"/>
+      <circle class="b-glow" cx="60" cy="99" r="4" fill="#ff8a6b"/>
       <path d="M38 92 l-14 10 M82 92 l14 -10" stroke="#ffd9a8" stroke-width="3" stroke-linecap="round"/>
     </svg>
       <div class="bubble" id="bubble" aria-live="polite">Hi! I'm Bolt, Sara's assistant. Click a chip on the board below to explore.</div>

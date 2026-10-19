@@ -9,7 +9,7 @@
   --line:rgba(255,190,110,.3); --line2:rgba(255,190,110,.22); --tint:rgba(255,190,110,.1); --mint-line:rgba(158,230,208,.5);
   --shade:rgba(0,0,0,.18); --well:#0d0b11; --on-amber:#2b2236; --amber-hover:#ffe6c4; --dock-bg:rgba(43,34,54,.88);
   --card-a:rgba(58,47,74,.75); --card-b:rgba(22,18,29,.6); --scan:rgba(0,0,0,.12); --glow:rgba(255,190,110,.25);
-  --on-coral:#2b2236; --bolt-line:#ffd9a8; --bolt-body:#3a2f4a; --bolt-eye:#16121d; --shadow:rgba(0,0,0,.5);
+  --on-coral:#2b2236; --bolt-line:#ffd9a8; --bolt-body:#3a2f4a; --bolt-hi:#6a5590; --bolt-lo:#2d2340; --bolt-shade:#0d0916; --bolt-ihi:#b9fbe8; --bolt-ilo:#3cc4a4; --bolt-cheek:.28; --bolt-eye:#16121d; --shadow:rgba(0,0,0,.5);
   --bgfx:linear-gradient(transparent,transparent); --lift:none; --pix:none; --pixs:none; --h1fx:0 0 28px var(--glow); --hdr:var(--surface2);
   --c1:#ff8a6b; --c2:#9ee6d0; --c3:#ffd9a8; --c4:#6ab8ff; --c5:#ff7ad9;
 }
@@ -18,7 +18,7 @@
   --line:rgba(43,34,54,.3); --line2:rgba(43,34,54,.18); --tint:rgba(43,34,54,.07); --mint-line:rgba(19,113,95,.45);
   --shade:rgba(255,255,255,.8); --well:#f2eadd; --on-amber:#fff8ee; --amber-hover:#463a54; --dock-bg:rgba(255,253,248,.9);
   --card-a:#ffffff; --card-b:#f6eefc; --scan:rgba(43,34,54,.03); --glow:rgba(43,34,54,0);
-  --bolt-line:#2b2236; --bolt-body:#ffd9a8; --bolt-eye:#2b2236; --shadow:rgba(43,34,54,.22);
+  --bolt-line:#2b2236; --bolt-body:#ffd9a8; --bolt-hi:#ffeed6; --bolt-lo:#ffb98c; --bolt-shade:#8b4fd0; --bolt-ihi:#aaf5de; --bolt-ilo:#14907a; --bolt-cheek:.5; --bolt-eye:#2b2236; --shadow:rgba(43,34,54,.22);
   --bgfx:radial-gradient(620px 420px at 88% 8%,rgba(255,138,107,.28),transparent 70%),radial-gradient(720px 520px at 4% 45%,rgba(106,184,255,.26),transparent 70%),radial-gradient(560px 420px at 62% 98%,rgba(158,230,208,.4),transparent 70%),radial-gradient(rgba(61,33,96,.1) 1px,transparent 1.5px) 0 0/22px 22px;
   --lift:inset 0 1px 0 #fff,0 10px 24px -10px rgba(61,33,96,.35),0 2px 5px rgba(61,33,96,.1); --pix:5px 5px 0 rgba(61,33,96,.9); --pixs:3px 3px 0 rgba(61,33,96,.9); --h1fx:4px 4px 0 #ffb29b,8px 8px 0 rgba(61,33,96,.16); --hdr:linear-gradient(180deg,#f4ecff,#e3d6f7);
   --on-coral:#fff8ee; --c1:#c2452b; --c2:#13715f; --c3:#b5831d; --c4:#2f6fd0; --c5:#b0408a; color-scheme:light;}}
@@ -27,7 +27,7 @@
   --line:rgba(43,34,54,.3); --line2:rgba(43,34,54,.18); --tint:rgba(43,34,54,.07); --mint-line:rgba(19,113,95,.45);
   --shade:rgba(255,255,255,.8); --well:#f2eadd; --on-amber:#fff8ee; --amber-hover:#463a54; --dock-bg:rgba(255,253,248,.9);
   --card-a:#ffffff; --card-b:#f6eefc; --scan:rgba(43,34,54,.03); --glow:rgba(43,34,54,0);
-  --bolt-line:#2b2236; --bolt-body:#ffd9a8; --bolt-eye:#2b2236; --shadow:rgba(43,34,54,.22);
+  --bolt-line:#2b2236; --bolt-body:#ffd9a8; --bolt-hi:#ffeed6; --bolt-lo:#ffb98c; --bolt-shade:#8b4fd0; --bolt-ihi:#aaf5de; --bolt-ilo:#14907a; --bolt-cheek:.5; --bolt-eye:#2b2236; --shadow:rgba(43,34,54,.22);
   --bgfx:radial-gradient(620px 420px at 88% 8%,rgba(255,138,107,.28),transparent 70%),radial-gradient(720px 520px at 4% 45%,rgba(106,184,255,.26),transparent 70%),radial-gradient(560px 420px at 62% 98%,rgba(158,230,208,.4),transparent 70%),radial-gradient(rgba(61,33,96,.1) 1px,transparent 1.5px) 0 0/22px 22px;
   --lift:inset 0 1px 0 #fff,0 10px 24px -10px rgba(61,33,96,.35),0 2px 5px rgba(61,33,96,.1); --pix:5px 5px 0 rgba(61,33,96,.9); --pixs:3px 3px 0 rgba(61,33,96,.9); --h1fx:4px 4px 0 #ffb29b,8px 8px 0 rgba(61,33,96,.16); --hdr:linear-gradient(180deg,#f4ecff,#e3d6f7);
   --on-coral:#fff8ee; --c1:#c2452b; --c2:#13715f; --c3:#b5831d; --c4:#2f6fd0; --c5:#b0408a; color-scheme:light;}
@@ -185,7 +185,11 @@ a{color:var(--mint)}
 
 /* Theme-aware SVG parts */
 .bot svg [stroke="#ffd9a8"]{stroke:var(--bolt-line)}
-.bot svg [fill="#3a2f4a"]{fill:var(--bolt-body)}
+.bot svg [fill="#3a2f4a"]{fill:url(#bgBody)}
+.bot svg .s-hi{stop-color:var(--bolt-hi)}.bot svg .s-lo{stop-color:var(--bolt-lo)}.bot svg .i-hi{stop-color:var(--bolt-ihi)}.bot svg .i-lo{stop-color:var(--bolt-ilo)}
+.bot svg #eyeL,.bot svg #eyeR{fill:url(#bgIris);filter:drop-shadow(0 0 3px var(--bolt-ilo))}
+.bot svg .b-cheek{fill:#ff8a6b;opacity:var(--bolt-cheek)}
+.bot svg .b-glow{filter:drop-shadow(0 0 3px #ff8a6b)}
 .bot svg [fill="#16121d"]{fill:var(--bolt-eye)}
 .app svg{stroke:var(--amber)}
 .theme{font:20px var(--f-pixel);color:var(--amber);border:1px solid var(--line);border-radius:6px;padding:0 10px;line-height:1.4}
